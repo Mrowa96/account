@@ -1,0 +1,53 @@
+.Box {
+  background: rgba(var(--c-white));
+  border: 1px solid rgba(var(--c-grey-200));
+  border-radius: var(--default-radius);
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 0 auto;
+  padding: 15px;
+
+  .Header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .Title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .ToggleButton {
+      padding: 4.5px 6px;
+
+      [data-icon] {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .Content {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+  }
+
+  &.Expanded {
+    margin: 0;
+
+    .Header {
+      margin: 0 0 10px;
+
+      .ToggleButton {
+        padding: 4.5px 6px;
+
+        [data-icon] {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

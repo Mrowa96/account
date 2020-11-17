@@ -1,0 +1,61 @@
+@font-face {
+  font-display: block;
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: normal;
+  src: url('@/static/fonts/icons.woff') format('woff');
+}
+
+[data-icon] {
+  font-family: 'icons' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: never;
+  text-transform: none;
+}
+
+:global {
+  & [data-icon='create']:before {
+    content: '\e900';
+  }
+
+  & [data-icon='add']:before {
+    content: '\e901';
+  }
+
+  & [data-icon='arrow-up']:before {
+    content: '\e902';
+  }
+
+  & [data-icon='arrow-down']:before {
+    content: '\e903';
+  }
+
+  & [data-icon='eye']:before {
+    content: '\e904';
+  }
+
+  & [data-icon='trash']:before {
+    content: '\e905';
+  }
+
+  & [data-icon='close']:before {
+    content: '\e906';
+  }
+
+  & [data-icon='download']:before {
+    content: '\e907';
+  }
+
+  & [data-icon='save']:before {
+    content: '\e908';
+  }
+
+  & [data-icon='settings']:before {
+    content: '\e909';
+  }
+}

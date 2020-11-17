@@ -1,0 +1,56 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+jobs:
+  prepare-environment:
+    machine:
+      enabled: true
+    steps:
+      - run: sudo apt install rsync
+      - add_ssh_keys:
+          fingerprints:
+            - '$SSH_KEY'
+      - run: ssh-keyscan "$SSH_HOST" >> ~/.ssh/known_hosts
+
+  build:
+    executor:
+      name: node/default
+      tag: '14.15'
+    steps:
+      - checkout
+      - node/install-packages
+      - run: cp .env.dist .env
+      - run: |
+          sed -i "s@APP_URL_PLACEHOLDER@${APP_URL}@g" .env
+          sed -i "s@APP_API_URL_PLACEHOLDER@${APP_API_URL}@g" .env
+          sed -i "s@APP_API_PORT_PLACEHOLDER@${APP_API_PORT}@g" .env
+      - run: npm run lint:scripts
+      - run: npm run lint:styles
+      - run: npm run lint:formatting
+      - run: npm run test
+      - run: npm run build
+      - run: npm prune --production
+      - run: make bundle
+      - save_cache:
+          key: bundle-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - bundle.tar.gz
+
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - restore_cache:
+          key: bundle-{{ .Environment.CIRCLE_SHA1 }}
+      - run: rsync -va --delete bundle.tar.gz "$SSH_USER@$SSH_HOST:$SSH_PATH"
+      - run: ssh -t "$SSH_USER@$SSH_HOST" "cd $SSH_PATH && sh deploy.sh"
+
+workflows:
+  deploy:
+    jobs:
+      - prepare-environment
+      - build
+      - deploy:
+          requires:
+            - prepare-environment
+            - build

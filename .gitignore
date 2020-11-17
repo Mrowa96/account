@@ -1,0 +1,12 @@
+# Directories
+dist
+node_modules
+coverage
+.vscode
+.idea 
+
+# Files
+.DS_Store
+npm-debug.log*
+.env
+bundle.tar.gz

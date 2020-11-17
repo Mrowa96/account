@@ -1,0 +1,19 @@
+@import 'mixins.scss';
+
+.Button {
+  @include clickableElement;
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .Icon {
+    color: rgba(var(--c-grey-700));
+    font-size: 1.1rem;
+
+    & + .Text {
+      margin: 0 0 0 5px;
+    }
+  }
+}
