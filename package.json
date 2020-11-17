@@ -18,7 +18,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "lint:scripts": "eslint --ext .js --ext .ts --ext .tsx .",
+    "lint:scripts": "npx eslint --ext .js --ext .ts --ext .tsx .",
     "lint:styles": "npx stylelint \"**/*.scss\"",
     "lint:formatting": "npx prettier -c \"*.{ts,tsx,js,json,md,yml}\"",
     "check:code": "concurrently \"npm run lint:formatting\" \"npm run lint:styles\" \"npm run lint:scripts\" \"npm run test\"",
