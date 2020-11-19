@@ -1,10 +1,10 @@
 import { RouteType } from '@/types';
 
 const Routes: {
-  main: RouteType;
+  dashboard: RouteType;
   login: RouteType;
 } = {
-  main: {
+  dashboard: {
     path: '/',
   },
   login: {

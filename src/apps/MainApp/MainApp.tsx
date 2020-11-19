@@ -11,7 +11,7 @@ export default function MainApp(): JSX.Element {
     <StrictMode>
       <main data-testid='content' className={styles.Content}>
         <Switch>
-          <Route path={Routes.main.path} exact>
+          <Route path={Routes.dashboard.path} exact>
             <MainPage />
           </Route>
           <Route path={Routes.login.path} exact>

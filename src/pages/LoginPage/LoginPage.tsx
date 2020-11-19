@@ -1,17 +1,21 @@
 import React, { FormEvent, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import classnames from 'classnames';
 import Box from '@/components/Box';
 import Button from '@/components/Button';
+import StoredAccountData from '@/modules/StoredAccountData';
 import callApi from '@/helpers/callApi';
 import HttpCode from '@/consts/httpCode';
 import { BadRequestResponse } from '@/types';
+import Routes from '@/consts/routes';
 import styles from './LoginPage.scss';
 
 // TODO Cleanup and write tests
-export default function LoginPage(): JSX.Element {
+export default function LoginPage(): JSX.Element | null {
   const [payload, setPayload] = useState({ email: '', password: '' });
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [unexpectedError, setUnexpectedError] = useState(false);
+  const history = useHistory();
 
   async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -26,8 +30,13 @@ export default function LoginPage(): JSX.Element {
       });
 
       if (response.status === HttpCode.NoContent) {
-        // set ls and redirect
-      } else if (response.status === HttpCode.BadRequest) {
+        StoredAccountData.store(payload.email);
+        history.push(Routes.dashboard.path);
+
+        return;
+      }
+
+      if (response.status === HttpCode.BadRequest) {
         const data = (await response.json()) as BadRequestResponse;
         const formNode = event.target as HTMLFormElement;
 
@@ -40,14 +49,19 @@ export default function LoginPage(): JSX.Element {
         });
 
         formNode.reportValidity();
-      } else {
-        setUnexpectedError(true);
+
+        setButtonDisabled(false);
+
+        return;
       }
+
+      throw Error('Unexpected error.');
     } catch (error) {
+      setUnexpectedError(true);
+      setButtonDisabled(false);
+
       console.error(error);
     }
-
-    setButtonDisabled(false);
   }
 
   function handleControlChange(control: string, event: FormEvent<HTMLInputElement>) {
@@ -66,6 +80,12 @@ export default function LoginPage(): JSX.Element {
 
   function handlePasswordChange(event: FormEvent<HTMLInputElement>) {
     handleControlChange('password', event);
+  }
+
+  if (StoredAccountData.has()) {
+    history.replace(Routes.dashboard.path);
+
+    return null;
   }
 
   return (
@@ -91,6 +111,7 @@ export default function LoginPage(): JSX.Element {
             Password
           </label>
           <input
+            // TODO Create pattern
             className={styles.Input}
             type='password'
             id='password'
