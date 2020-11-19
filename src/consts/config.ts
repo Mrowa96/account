@@ -1,4 +1,4 @@
-const config = {
+const Config = {
   app: {
     url: process.env.APP_URL as string,
     api: {
@@ -8,4 +8,4 @@ const config = {
   },
 };
 
-export default config;
+export default Config;

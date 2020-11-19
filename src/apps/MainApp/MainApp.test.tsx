@@ -7,7 +7,7 @@ import MainApp from '.';
 jest.mock('@/pages/MainPage', () => DummyComponent);
 
 describe('[App] MainApp', () => {
-  it('should have only one class for content by default', () => {
+  it('should display content', () => {
     const { getByTestId } = render(
       <MemoryRouter initialEntries={['/']}>
         <MainApp />

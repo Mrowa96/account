@@ -16,7 +16,9 @@
     "resolveJsonModule": true,
     "experimentalDecorators": false,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@server/*": ["server/*"],
+      "@client/*": ["client/*"]
     }
   },
   "include": ["./src/**/*", "./server/**/*", "./client/**/*"]
