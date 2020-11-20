@@ -43,7 +43,9 @@ describe('[Page] LoginPage', () => {
 
     expect(getByRole('form')).toBeInTheDocument();
     expect(getByLabelText('Email')).toBeRequired();
+    expect(getByLabelText('Email')).toHaveAttribute('type', 'email');
     expect(getByLabelText('Password')).toBeRequired();
+    expect(getByLabelText('Password')).toHaveAttribute('type', 'password');
   });
 
   it('should render submit button in the form', () => {
@@ -62,6 +64,22 @@ describe('[Page] LoginPage', () => {
 
     expect(history.location.pathname).toEqual('/');
     expect(container).toBeEmptyDOMElement();
+  });
+
+  test.each(['aaaaaaaa', '12345678', 'aB3cdef', 'abcd1234'])('should mark password field as invalid', password => {
+    const { getByLabelText } = render(component);
+
+    fireEvent.change(getByLabelText('Password'), { target: { value: password } });
+
+    expect(getByLabelText('Password')).toBeInvalid();
+  });
+
+  test.each(['abcdEf1@', '1234ABCD'])('should mark password field as valid', password => {
+    const { getByLabelText } = render(component);
+
+    fireEvent.change(getByLabelText('Password'), { target: { value: password } });
+
+    expect(getByLabelText('Password')).toBeValid();
   });
 
   it('should redirect to dashboard login was successful', () => {

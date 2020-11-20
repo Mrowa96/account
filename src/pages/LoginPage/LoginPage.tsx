@@ -111,13 +111,14 @@ export default function LoginPage(): JSX.Element | null {
             Password
           </label>
           <input
-            // TODO Create pattern
             className={styles.Input}
             type='password'
             id='password'
             autoComplete='current-password'
             onChange={handlePasswordChange}
             value={payload.password}
+            pattern='^(?=.*\d)(?=.*[A-Z]).{8,}$'
+            title='Password must contain at least one number, one upper letter and be longer than eight characters.'
             required
           />
         </div>
