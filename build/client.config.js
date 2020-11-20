@@ -100,10 +100,10 @@ module.exports = {
   context: __dirname,
   mode: ENV,
   entry: {
-    main: path.resolve('./client/main.tsx'),
+    main: path.resolve('./client/index.tsx'),
   },
   output: {
-    filename: '[name].[chunkhash].js',
+    filename: 'app.[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
     path: path.resolve('./dist/client'),
     publicPath: '/',
@@ -112,6 +112,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
       '@': path.resolve('./src/'),
+      '@client': path.resolve('./client/'),
     },
   },
   module: {

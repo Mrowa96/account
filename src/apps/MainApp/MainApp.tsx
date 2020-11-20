@@ -2,7 +2,8 @@ import React, { StrictMode } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import MainPage from '@/pages/MainPage';
 import NotFoundPage from '@/pages/NotFoundPage';
-import routes from '@/consts/routes';
+import LoginPage from '@/pages/LoginPage';
+import Routes from '@/consts/routes';
 import styles from './MainApp.scss';
 
 export default function MainApp(): JSX.Element {
@@ -10,8 +11,11 @@ export default function MainApp(): JSX.Element {
     <StrictMode>
       <main data-testid='content' className={styles.Content}>
         <Switch>
-          <Route path={routes.main.path} exact>
+          <Route path={Routes.dashboard.path} exact>
             <MainPage />
+          </Route>
+          <Route path={Routes.login.path} exact>
+            <LoginPage />
           </Route>
           <Route>
             <NotFoundPage />

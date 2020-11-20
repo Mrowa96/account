@@ -10,6 +10,11 @@
 - Run `npm i`
 - Run `npm run start`
 
+## Credentials for login form:
+
+- Email: hello@there.com
+- Password: zaq1@WSX
+
 ## Information for developers
 
 - In scripts you should import modules by `import xxx from @/xxx`. `@` is resolving to `src` directory.

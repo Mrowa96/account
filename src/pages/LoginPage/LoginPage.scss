@@ -1,0 +1,46 @@
+.Form {
+  display: block;
+
+  .Row {
+    display: block;
+    margin: 0 0 15px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  .Label {
+    color: rgba(var(--c-grey-800));
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0 0 5px;
+  }
+
+  .Input {
+    appearance: none;
+    border: 1px solid rgba(var(--c-grey-300));
+    border-radius: var(--default-radius);
+    display: block;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .ButtonAndErrorWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .Error {
+      color: rgba(var(--c-red-500));
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0 10px 0 0;
+    }
+
+    .Button {
+      margin: 0 0 0 auto;
+    }
+  }
+}

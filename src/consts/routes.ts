@@ -1,11 +1,15 @@
 import { RouteType } from '@/types';
 
-const routes: {
-  main: RouteType;
+const Routes: {
+  dashboard: RouteType;
+  login: RouteType;
 } = {
-  main: {
+  dashboard: {
     path: '/',
+  },
+  login: {
+    path: '/login',
   },
 };
 
-export default routes;
+export default Routes;
