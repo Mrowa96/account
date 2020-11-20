@@ -11,6 +11,8 @@ module.exports = {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/jest.mockFile.js',
     '\\.scss$': 'identity-obj-proxy',
     '@/(.*)$': '<rootDir>/src/$1',
+    '@server/(.*)$': '<rootDir>/server/$1',
+    '@client/(.*)$': '<rootDir>/client/$1',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   setupFilesAfterEnv: ['<rootDir>/jest.setupTests.js'],

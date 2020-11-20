@@ -1,19 +1,21 @@
-import loginHandler from './handlers/loginHandler';
-import { RouteType } from './types/route';
+import loginHandler from '@server/handlers/loginHandler';
+import { RouteType } from '@server/types';
 
 const routes: RouteType[] = [
   {
     method: 'POST',
     url: '/login',
     handler: loginHandler,
-    options: {
-      schema: {
-        body: {
-          type: 'object',
-          properties: {
-            email: {
-              type: 'string',
-            },
+    schema: {
+      body: {
+        type: 'object',
+        required: ['email', 'password'],
+        properties: {
+          email: {
+            type: 'string',
+          },
+          password: {
+            type: 'string',
           },
         },
       },

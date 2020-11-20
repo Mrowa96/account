@@ -5,7 +5,7 @@ import Config from '@/consts/config';
 
 export default function createServer(): FastifyInstance {
   const server = fastify({
-    logger: true,
+    logger: process.env.NODE_ENV !== 'test',
     disableRequestLogging: true,
   });
 
@@ -13,11 +13,11 @@ export default function createServer(): FastifyInstance {
     origin: Config.app.url,
   });
 
-  routes.forEach(({ method, url, options, handler }) =>
+  routes.forEach(({ method, url, schema, handler }) =>
     server.route({
       method,
       url,
-      config: options,
+      schema,
       handler,
     }),
   );

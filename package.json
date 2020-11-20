@@ -38,7 +38,7 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "@mrowa96/eslint-config-react": "^1.5.1",
+    "@mrowa96/eslint-config-react": "^1.6.1",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.2.1",
     "@testing-library/react-hooks": "^3.4.2",
