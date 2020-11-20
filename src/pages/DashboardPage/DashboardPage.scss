@@ -1,0 +1,25 @@
+.Content {
+  padding: 0;
+}
+
+.Details {
+  align-items: center;
+  background: rgba(var(--c-grey-200));
+  color: rgba(var(--c-grey-700));
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+
+  & > [data-icon='user'] {
+    font-size: 1.5rem;
+  }
+
+  .Email {
+    font-weight: 600;
+  }
+}
+
+.ButtonWrapper {
+  padding: 15px;
+  text-align: right;
+}

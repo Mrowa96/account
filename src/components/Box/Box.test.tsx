@@ -10,4 +10,14 @@ describe('[Component] Box', () => {
     expect(getByRole('heading')).toHaveTextContent('Box title');
     expect(getByTestId('content')).toHaveTextContent('Example text');
   });
+
+  it('should have ability to set additional content class', () => {
+    const { getByTestId } = render(
+      <Box title='Box title' contentClassName='additional-class'>
+        Example text
+      </Box>,
+    );
+
+    expect(getByTestId('content')).toHaveClass('additional-class');
+  });
 });

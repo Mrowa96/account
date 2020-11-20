@@ -82,7 +82,7 @@ export default function LoginPage(): JSX.Element | null {
     handleControlChange('password', event);
   }
 
-  if (StoredAccountData.has()) {
+  if (StoredAccountData.get()) {
     history.replace(Routes.dashboard.path);
 
     return null;

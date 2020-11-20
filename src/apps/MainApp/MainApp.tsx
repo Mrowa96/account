@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import MainPage from '@/pages/MainPage';
+import MainPage from '@/pages/DashboardPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import LoginPage from '@/pages/LoginPage';
 import Routes from '@/consts/routes';

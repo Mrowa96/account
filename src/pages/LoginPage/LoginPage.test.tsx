@@ -7,7 +7,7 @@ import callApi from '@/helpers/callApi';
 import LoginPage from '.';
 
 jest.mock('@/modules/StoredAccountData', () => ({
-  has: jest.fn(),
+  get: jest.fn(),
   store: jest.fn(),
 }));
 
@@ -18,7 +18,7 @@ describe('[Page] LoginPage', () => {
   let component;
 
   beforeEach(() => {
-    (StoredAccountData.has as jest.Mock).mockReturnValue(false);
+    (StoredAccountData.get as jest.Mock).mockReturnValue(undefined);
     (StoredAccountData.store as jest.Mock).mockClear();
     (callApi as jest.Mock).mockClear();
 
@@ -56,7 +56,7 @@ describe('[Page] LoginPage', () => {
   });
 
   it('should redirect to dashboard if account data is stored', () => {
-    (StoredAccountData.has as jest.Mock).mockReturnValue(true);
+    (StoredAccountData.get as jest.Mock).mockReturnValue({ email: 'test@example.com' });
 
     expect(history.location.pathname).toEqual('/login');
 

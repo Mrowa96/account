@@ -65,10 +65,6 @@ const plugins = [
           ignore: [path.resolve('./src/static/images/*.xcf')],
         },
       },
-      {
-        from: path.resolve('./src/static/svg'),
-        to: path.resolve('./dist/client/svg'),
-      },
     ],
   }),
   new EnvironmentPlugin({
@@ -155,10 +151,6 @@ module.exports = {
             },
           },
         ],
-      },
-      {
-        test: /\.(svg|nunjucks)$/,
-        loader: 'raw-loader',
       },
       {
         test: /\.(woff(2)?|ttf|eot)$/,
