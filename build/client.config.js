@@ -62,8 +62,12 @@ const plugins = [
         from: path.resolve('./src/static/images'),
         to: path.resolve('./dist/client/images'),
         globOptions: {
-          ignore: [path.resolve('./src/static/images/*.xcf')],
+          ignore: ['**/*.xcf'],
         },
+      },
+      {
+        from: path.resolve('./src/static/robots.txt'),
+        to: path.resolve('./dist/client/robots.txt'),
       },
     ],
   }),
