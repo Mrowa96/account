@@ -62,12 +62,12 @@ const plugins = [
         from: path.resolve('./src/static/images'),
         to: path.resolve('./dist/client/images'),
         globOptions: {
-          ignore: [path.resolve('./src/static/images/*.xcf')],
+          ignore: ['**/*.xcf'],
         },
       },
       {
-        from: path.resolve('./src/static/svg'),
-        to: path.resolve('./dist/client/svg'),
+        from: path.resolve('./src/static/robots.txt'),
+        to: path.resolve('./dist/client/robots.txt'),
       },
     ],
   }),
@@ -155,10 +155,6 @@ module.exports = {
             },
           },
         ],
-      },
-      {
-        test: /\.(svg|nunjucks)$/,
-        loader: 'raw-loader',
       },
       {
         test: /\.(woff(2)?|ttf|eot)$/,

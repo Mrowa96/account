@@ -1,8 +1,7 @@
-import { clear, get, has, store } from './StoredAccountData';
+import { clear, get, store } from './StoredAccountData';
 
 export default {
   clear,
   get,
-  has,
   store,
 };

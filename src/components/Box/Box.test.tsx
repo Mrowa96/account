@@ -10,4 +10,14 @@ describe('[Component] Box', () => {
     expect(getByRole('heading')).toHaveTextContent('Box title');
     expect(getByTestId('content')).toHaveTextContent('Example text');
   });
+
+  it('should have ability to disable padding for content', () => {
+    const { getByTestId } = render(
+      <Box title='Box title' disablePadding>
+        Example text
+      </Box>,
+    );
+
+    expect(getByTestId('content')).toHaveClass('WithoutPadding');
+  });
 });

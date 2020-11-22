@@ -67,7 +67,6 @@
     "postcss": "^7.0.35",
     "postcss-loader": "^4.1.0",
     "prettier": "^2.1.2",
-    "raw-loader": "^4.0.2",
     "react-router": "^5.2.0",
     "react-test-renderer": "^17.0.1",
     "sass": "^1.29.0",
