@@ -3,19 +3,23 @@
 
   max-width: var(--box-width);
   width: 100%;
-}
 
-.Title {
-  color: rgba(var(--c-white));
-  font-size: 2rem;
-  font-weight: 300;
-  margin: 0 0 10px;
-}
+  .Title {
+    color: rgba(var(--c-white));
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 10px;
+  }
 
-.Content {
-  background: rgba(var(--c-white));
-  border-radius: 15px;
-  box-shadow: 0 2px 10px 1px rgba(var(--c-black), 0.3);
-  overflow: hidden;
-  padding: 15px;
+  .Content {
+    background: rgba(var(--c-white));
+    border-radius: 15px;
+    box-shadow: 0 2px 10px 1px rgba(var(--c-black), 0.3);
+    overflow: hidden;
+    padding: 15px;
+
+    &.WithoutPadding {
+      padding: 0;
+    }
+  }
 }

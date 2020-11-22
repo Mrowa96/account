@@ -11,13 +11,13 @@ describe('[Component] Box', () => {
     expect(getByTestId('content')).toHaveTextContent('Example text');
   });
 
-  it('should have ability to set additional content class', () => {
+  it('should have ability to disable padding for content', () => {
     const { getByTestId } = render(
-      <Box title='Box title' contentClassName='additional-class'>
+      <Box title='Box title' disablePadding>
         Example text
       </Box>,
     );
 
-    expect(getByTestId('content')).toHaveClass('additional-class');
+    expect(getByTestId('content')).toHaveClass('WithoutPadding');
   });
 });

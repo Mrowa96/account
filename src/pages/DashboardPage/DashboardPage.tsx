@@ -23,7 +23,7 @@ export default function DashboardPage(): JSX.Element | null {
   }
 
   return (
-    <Box title='Dashboard' contentClassName={styles.Content}>
+    <Box title='Dashboard' disablePadding>
       <div className={styles.Details}>
         <Icon name='user' />
         <span className={styles.Email}>{accountData.email}</span>
