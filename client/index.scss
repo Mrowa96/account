@@ -4,6 +4,7 @@
 
 html,
 body {
+  background: rgba(var(--c-aquamarine-400));
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -29,7 +30,6 @@ textarea {
 
 :global {
   & #app-root {
-    background: rgba(var(--c-aquamarine-400));
     display: flex;
     flex-flow: column nowrap;
     min-height: 100%;
