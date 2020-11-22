@@ -55,7 +55,7 @@ describe('[POST] /login', () => {
     });
     const responseBody = JSON.parse(response.body);
 
-    expect(responseBody.errors).toEqual([{ field: 'email', message: 'Account with given email does not exist' }]);
+    expect(responseBody.errors).toEqual([{ field: 'email', message: 'Account with given email does not exist.' }]);
     expect(response.statusCode).toEqual(400);
   });
 
@@ -77,7 +77,7 @@ describe('[POST] /login', () => {
     });
     const responseBody = JSON.parse(response.body);
 
-    expect(responseBody.errors).toEqual([{ field: 'password', message: 'Invalid password' }]);
+    expect(responseBody.errors).toEqual([{ field: 'password', message: 'Invalid password.' }]);
     expect(response.statusCode).toEqual(400);
   });
 
