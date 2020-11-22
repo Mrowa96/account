@@ -12,6 +12,7 @@
   font-weight: 400;
   justify-content: center;
   padding: 10px 20px;
+  -webkit-tap-highlight-color: rgba(var(--c-white), 0);
   text-decoration: none;
 
   &[disabled] {
