@@ -44,6 +44,11 @@ const plugins = [
     inject: true,
     prefix: 'assets/',
     favicons: {
+      appName: 'Account',
+      appShortName: 'Account',
+      theme_color: '#29856b',
+      start_url: '/',
+      orientation: 'portrait',
       icons: {
         android: true,
         appleIcon: true,
