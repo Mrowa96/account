@@ -6,18 +6,22 @@
 
 ## How to setup dev environment?
 
-- Copy `.env.dist` to `.env` and replace all envs ended with PLACEHOLDER suffix
+- Copy `.env.dist` to `.env` and replace all envs ended with PLACEHOLDER suffix. Example:
+  ```
+    APP_URL=http://localhost:3000
+    APP_API_URL=http://localhost:3001
+    APP_API_PORT=3001
+    DEV_DISABLE_TYPE_CHECK=1
+    DEV_APP_PORT=3000
+  ```
 - Run `npm i`
 - Run `npm run start`
 
-## Credentials for login form:
+## Credentials for login form
 
 - Email: hello@there.com
 - Password: zaq1@WSX
 
-## Information for developers
+## Production version
 
-- In scripts you should import modules by `import xxx from @/xxx`. `@` is resolving to `src` directory.
-- In styles you should import styles by `@import 'xxx.scss';`. It will resolve to `src/styles` directory.
-- When `NODE_ENV` will be equal to `development` only one favicon will be generated - for better performance.
-- You could disable type checking on dev build for better performance by setting `BUILD_DISABLE_TYPE_CHECK_IN_DEV_ENV` to `1` in `.env` file.
+Production version is available on https://pawel-mrowiec.dev/
