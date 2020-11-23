@@ -1,6 +1,6 @@
 {
   "name": "account",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Basic app with auth implementation.",
   "repository": {
     "type": "git",
