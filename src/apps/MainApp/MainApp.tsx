@@ -4,12 +4,16 @@ import MainPage from '@/pages/DashboardPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 import LoginPage from '@/pages/LoginPage';
 import Routes from '@/consts/routes';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import styles from './MainApp.scss';
 
 export default function MainApp(): JSX.Element {
   return (
     <StrictMode>
-      <main data-testid='content' className={styles.Content}>
+      <Header />
+
+      <main className={styles.Content}>
         <Switch>
           <Route path={Routes.dashboard.path} exact>
             <MainPage />
@@ -22,6 +26,8 @@ export default function MainApp(): JSX.Element {
           </Route>
         </Switch>
       </main>
+
+      <Footer />
     </StrictMode>
   );
 }

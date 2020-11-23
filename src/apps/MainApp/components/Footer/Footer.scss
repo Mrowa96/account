@@ -1,0 +1,37 @@
+@import 'variables';
+
+.Footer {
+  padding: 20px;
+  text-align: right;
+
+  .Text {
+    color: rgba(var(--c-white));
+    display: inline-flex;
+    font-size: 1rem;
+    margin: 0;
+
+    .Link {
+      border-bottom: 2px solid rgba(var(--c-white));
+      color: rgba(var(--c-white));
+      display: inline-flex;
+      margin: 0 0 0 5px;
+      -webkit-tap-highlight-color: rgba(var(--c-white), 0);
+      text-decoration: none;
+
+      @media (hover: hover) {
+        transition: border-color var(--default-transition), color var(--default-transition);
+
+        &:hover {
+          border-color: rgba(var(--c-white), 0.9);
+          color: rgba(var(--c-white), 0.9);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $smallViewport) {
+  .Footer {
+    text-align: center;
+  }
+}

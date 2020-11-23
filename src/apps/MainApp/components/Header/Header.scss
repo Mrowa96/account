@@ -1,0 +1,28 @@
+@import 'variables';
+
+.Header {
+  padding: 20px;
+
+  .LogoLink {
+    display: inline-flex;
+    -webkit-tap-highlight-color: rgba(var(--c-white), 0);
+    text-decoration: none;
+
+    .Logo {
+      border: 2px solid rgba(var(--c-white));
+      border-radius: var(--default-radius);
+      color: rgba(var(--c-white));
+      display: inline-flex;
+      font-size: 2rem;
+      font-weight: 300;
+      margin: 0;
+      padding: 5px 10px;
+    }
+  }
+}
+
+@media (max-width: $smallViewport) {
+  .Header {
+    text-align: center;
+  }
+}
