@@ -24,7 +24,7 @@
     "check:code": "concurrently \"npm run lint:formatting\" \"npm run lint:styles\" \"npm run lint:scripts\" \"npm run test\"",
     "check:build:client": "cross-env BUILD_ANALYZE=1 webpack --config ./build/client.config.js",
     "check:build:server": "cross-env BUILD_ANALYZE=1 webpack --config ./build/server.config.js",
-    "serve": "concurrently \"ws -p 3000 -d ./dist/client --compress --spa index.html\" \"nodemon ./dist/server\""
+    "serve": "concurrently \"serve -l 3000 -s ./dist/client\" \"nodemon ./dist/server\""
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -63,6 +63,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.3.1",
+    "nodemon": "^2.0.6",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.1.9",
     "postcss-loader": "^4.1.0",
@@ -71,6 +72,7 @@
     "react-test-renderer": "^17.0.1",
     "sass": "^1.29.0",
     "sass-loader": "^10.0.5",
+    "serve": "^11.3.2",
     "style-loader": "^2.0.0",
     "stylelint": "^13.7.2",
     "stylelint-config-css-modules": "^2.2.0",

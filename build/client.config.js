@@ -37,7 +37,6 @@ const plugins = [
   new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
     template: path.resolve('./src/static/main.ejs'),
-    scriptLoading: 'defer',
   }),
   new FaviconsWebpackPlugin({
     logo: path.resolve('./src/static/images/icon.png'),
