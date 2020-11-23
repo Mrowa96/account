@@ -25,3 +25,7 @@
 ## Production version
 
 Production version is available on https://account.pawel-mrowiec.dev/
+
+## TODO
+
+- Update webpack and related dependencies, when [this](https://github.com/jantimon/html-webpack-plugin/issues/1501) will be resolved.
