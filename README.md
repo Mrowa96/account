@@ -15,7 +15,7 @@
     DEV_APP_PORT=3000
   ```
 - Run `npm i`
-- Run `npm run start`
+- Run `npm start`
 
 ## Credentials for login form
 
@@ -24,4 +24,4 @@
 
 ## Production version
 
-Production version is available on https://pawel-mrowiec.dev/
+Production version is available on https://account.pawel-mrowiec.dev/
