@@ -14,7 +14,7 @@
     "build:client": "webpack --config ./build/client.config.js",
     "build:client:dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/client.config.js",
     "build:server": "webpack --config ./build/server.config.js",
-    "build:server:dev": "concurrently \"cross-env NODE_ENV=development webpack --watch --config ./build/server.config.js\" \"cross-env NODE_ENV=development npx nodemon ./dist/server\"",
+    "build:server:dev": "npx ./build/prepareServer.js && concurrently \"cross-env NODE_ENV=development webpack --watch --config ./build/server.config.js\" \"cross-env NODE_ENV=development npx nodemon ./dist/server\"",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
